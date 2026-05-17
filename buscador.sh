@@ -73,7 +73,7 @@ while true; do
 
         RESULTADO=$(grep -r "$PALAVRA" "$DIRETORIO" 2>/dev/null)
 
-        TOTAL=$(echo "$RESULTADO" | wc -l)
+        TOTAL=$(grep -r "$PALAVRA" "$DIRETORIO" 2>/dev/null | wc -l)
 
         > relatorio.txt
 
