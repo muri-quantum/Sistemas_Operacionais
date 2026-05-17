@@ -12,18 +12,15 @@ while true; do
         echo "Encerrou..."
         break
     fi
-
-    while true; do
     
-        read -p "Digite o diretório: " DIRETORIO
+    read -p "Digite o diretório: " DIRETORIO
 
-        if [ -d "$DIRETORIO" ]; then
-            break
-        else
-            echo "Diretório inválido"
-        fi
-    done
-
+    if [ ! -d "$DIRETORIO" ]; then
+        echo "Diretório inválido"
+        echo
+        continue
+    fi
+    
     if [ $OPCAO -eq 1 ]; then
 
         read -p "Digite o nome do arquivo: " NOME
@@ -40,6 +37,7 @@ while true; do
         echo "Diretório: $DIRETORIO" >> relatorio.txt
         echo "Busca por nome: $NOME" >> relatorio.txt
         echo "Total de arquivos encontrados: $TOTAL" >> relatorio.txt
+        echo "--------------------------------" >> relatorio.txt
         
         SOMA=0
 
