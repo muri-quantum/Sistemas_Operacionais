@@ -9,11 +9,12 @@ while true; do
     read -p "Escolha uma opção: " OPCAO
 
     if [ $OPCAO -eq 3 ]; then
-        echo "Encerrando..."
+        echo "Encerrou..."
         break
     fi
 
     while true; do
+    
         read -p "Digite o diretório: " DIRETORIO
 
         if [ -d "$DIRETORIO" ]; then
@@ -39,8 +40,7 @@ while true; do
         echo "Diretório: $DIRETORIO" >> relatorio.txt
         echo "Busca por nome: $NOME" >> relatorio.txt
         echo "Total de arquivos encontrados: $TOTAL" >> relatorio.txt
-        echo "--------------------------------" >> relatorio.txt
-
+        
         SOMA=0
 
         for ARQUIVO in $RESULTADO; do
@@ -76,9 +76,7 @@ while true; do
         echo "Busca por conteúdo: $PALAVRA" >> relatorio.txt
         echo "Ocorrências encontradas: $TOTAL" >> relatorio.txt
         echo "--------------------------------" >> relatorio.txt
-
         echo "$RESULTADO" >> relatorio.txt
-
         echo "--------------------------------" >> relatorio.txt
 
         cat relatorio.txt
