@@ -35,7 +35,7 @@ while true; do
 
         RESULTADO=$(find "$DIRETORIO" -name "*$NOME*")
 
-        TOTAL=$(find "$DIRETORIO" -name "$NOME" | wc -l)
+        TOTAL=$(find "$DIRETORIO" -name "*$NOME*" | wc -l)
 
         > relatorio.txt
 
